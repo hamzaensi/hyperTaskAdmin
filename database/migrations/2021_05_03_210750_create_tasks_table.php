@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->text('body');
-            $table->string('status')->default('pending');
+            $table->string('status')->default(\App\hyperTask\TaskDefault::PENDING);
             $table->unsignedBigInteger('taskable_id');
             $table->string('taskable_type');
             $table->timestamps();

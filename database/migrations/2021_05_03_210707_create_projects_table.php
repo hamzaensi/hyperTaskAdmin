@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema; 
+use Illuminate\Support\Facades\Schema;
 class CreateProjectsTable extends Migration
 {
     /**
@@ -17,8 +17,8 @@ class CreateProjectsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->text('description');
-            $table->string('status')->default('draft');
-            
+            $table->string('status')->default(\App\hyperTask\ProjectDefault::DRAFT);
+
             $table->timestamps();
         });
     }
